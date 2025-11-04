@@ -26,6 +26,8 @@
 
 #### Q&A (5 min)
 
+---
+
 ### **Topic 2: Google Workspace Integration (60 min)**
 
 #### Google Authentication (25 min)
@@ -44,6 +46,8 @@
 - **Real example**: Student absence monitoring - Check attendance sheet daily and flag students with 3+ consecutive absences for counselor follow-up
 
 #### Q&A (5 min)
+
+---
 
 ### **Topic 3: AI Agent Integration (60 min)**
 
@@ -69,6 +73,8 @@
 - Test with different email scenario
 
 #### Q&A (10 min)
+
+---
 
 ### **Topic 4: Complete Workflow (60 min)**
 
