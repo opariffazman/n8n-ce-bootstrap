@@ -1,10 +1,12 @@
 # n8n Community Edition Bootstrap
 
-Quick and dirty setup of n8n Community Edition for evaluation and demonstration purposes. Intended for training sessions and testing.
+Quick and dirty setup of n8n Community Edition for evaluation and demonstration purposes.
+
+Intended for evaluation purposes or simple testing from your cloud provider of choosing.
 
 ## What This Deploys
 
-- Ubuntu instance (AWS EC2 or DigitalOcean Droplet)
+- Ubuntu instance (AWS EC2, DigitalOcean Droplet, or GCP Compute Engine)
 - Docker runtime
 - n8n CE container running on port 5678
 - n8n tunnel mode enabled for quick access
@@ -12,18 +14,19 @@ Quick and dirty setup of n8n Community Edition for evaluation and demonstration 
 ## Prerequisites
 
 - Terraform >= 1.13.0
-- AWS credentials configured (for AWS deployment)
-- DigitalOcean API token (for DO deployment)
+- Either one of these:
+  - AWS credentials [configured](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-files.html)
+  - DigitalOcean Personal Access Token [token](https://docs.digitalocean.com/reference/api/create-personal-access-token/)
+  - GCP [authenticated](https://cloud.google.com/sdk/gcloud/reference/alpha/auth/application-default/login)
 
 ## Quick Start
 
-### AWS Deployment
+### AWS
 
 ```bash
 cd terraform/aws
 terraform init
-terraform plan
-terraform apply
+terraform apply -auto-approve
 ```
 
 Use AWS Session Manager to connect to your EC2
@@ -32,16 +35,35 @@ Use AWS Session Manager to connect to your EC2
 docker logs n8n
 ```
 
-### DigitalOcean Deployment
+### DigitalOcean
 
 ```bash
 cd terraform/do
 terraform init
-terraform plan -var="do_token=YOUR_DO_TOKEN"
-terraform apply -var="do_token=YOUR_DO_TOKEN"
+terraform apply -auto-approve -var="do_token=YOUR_DO_TOKEN"
 ```
 
 Use Digital Ocean Console to connect to your Droplet
+
+### Google Cloud Platform
+
+```bash
+cd terraform/gcp
+terraform init
+terraform apply -auto-approve
+```
+
+Use gcloud to connect to your instance and check logs:
+
+```bash
+gcloud compute ssh n8n-server --zone=asia-southeast1-a --project=<your_project_id>
+```
+
+If you encounter organization policy errors regarding external IPs, reset the policy:
+
+```bash
+gcloud org-policies reset constraints/compute.vmExternalIpAccess --project=<your_project_id>
+```
 
 ## Setup Details
 
@@ -57,10 +79,10 @@ Setup logs are available at `/var/log/n8n-setup.log` on the instance.
 You can follow the setup log by running this:
 
 ```bash
-tail -f /var/log/n8n-setup.log"
+tail -f /var/log/n8n-setup.log
 ```
 
-And check the docker status with to get the tunnel url
+And check the docker status with to get the tunnel url:
 
 ```bash
 docker logs n8n
@@ -71,11 +93,13 @@ docker logs n8n
 - This is not production-ready
 - No SSL/TLS configuration included
 - Uses n8n tunnel mode (not suitable for production)
-- Default timezone set to Asia/Singapore
-- Modify `scripts/n8n-userdata.sh` to customize n8n configuration
+- Default timezone set to `Asia/Singapore`
 
 ## Cleanup
 
+This cleanup all infrastructure resources
+
 ```bash
-terraform destroy
+cd terraform/<your_cloud_provider>
+terraform destroy -auto-approve
 ```
