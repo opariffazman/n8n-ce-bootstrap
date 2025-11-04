@@ -2,9 +2,11 @@
 
   Create Slidev presentation slides following these requirements:
 
+  Follow sli.dev examples slide to understand the usage
+
 ## Input Structure
 
-- Source content from markdown outline files (e.g., 1.md, 2.md, 3.md)
+- Source content from markdown outline files `OUTLINE.md`
 - Each outline contains session structure with timing, topics, and real-world examples
 
 ## Design Principles
@@ -13,13 +15,12 @@
      - Use icons over text whenever possible
      - Heavy use of MDI icons (Material Design Icons)
      - Icon format: `<mdi-icon-name />` (self-closing tags)
-     - Emojis in Mermaid diagrams are acceptable
+     - No icons in Mermaid diagrams
 
   2. **Slide Structure**
      - Every slide must have a `transition:` property (slide-left, fade-out, slide-up, etc.)
      - Use `v-click` for progressive content reveals
      - Apply appropriate layouts: cover, center, two-cols, image-right, end
-     - Include timing information on section cover slides
 
   3. **Content Style**
      - Concise bullet points (not paragraphs)
@@ -29,15 +30,12 @@
      - Code blocks for technical examples
 
   4. **Presentation Flow**
-     - Cover slide with title and duration
-     - Welcome slide with session goals (3-column grid)
-     - Learning path overview with numbered sections
+     - Cover slide with title
      - Break slides with pause icon and timing
-     - Lab introduction slides with project overview
+     - Lab introduction slides
      - Step-by-step implementation slides
      - Practice/challenge slides
-     - Q&A slide
-     - End slide with celebration icon
+     - Q&A slide each hour
 
 ## Icon Usage Guidelines
 
@@ -52,7 +50,7 @@
 
 ## File Organization
 
-- Main file: `slidev/slides.md` (imports hour pages)
+- Main file: `slidev/slides.md` (imports pages)
 - Hour pages: `slidev/pages/hour1.md`, `slidev/pages/hour2.md`, etc.
 - Use `src: ./pages/hourX.md` to import sections
 
@@ -88,3 +86,4 @@
   - Maintain consistent visual hierarchy
   - Create Mermaid diagrams for workflows
   - Include real-world examples from the outline
+  - No Key Takeways or additional slides summaries as time constraint
