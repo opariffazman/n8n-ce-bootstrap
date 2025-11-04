@@ -42,11 +42,31 @@ exec >> /var/log/n8n-setup.log 2>&1
 
 echo "Background n8n setup started at $(date)"
 
+# Wait for network to be fully ready
+echo "Waiting for network connectivity..."
+until curl -s --max-time 5 https://www.google.com > /dev/null 2>&1; do
+  echo "Network not ready, waiting..."
+  sleep 5
+done
+echo "Network is ready at $(date)"
+
+# Wait for DNS resolution
+echo "Waiting for DNS resolution..."
+until nslookup docker.n8n.io > /dev/null 2>&1; do
+  echo "DNS not ready, waiting..."
+  sleep 5
+done
+echo "DNS is ready at $(date)"
+
 # Create docker volume
 docker volume create n8n_data
 
 # Pull n8n Docker image
 docker pull docker.n8n.io/n8nio/n8n
+
+# Additional wait after image pull to ensure network is stable
+echo "Waiting 10 seconds for network stability..."
+sleep 10
 
 # Start n8n container
 docker run -d \
