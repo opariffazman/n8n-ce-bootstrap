@@ -6,13 +6,6 @@ terraform {
       version = "6.19.0"
     }
   }
-
-  # backend "s3" {
-  #   bucket = "terraform-singapore-temp-bucket"
-  #   key    = "sandbox"
-  #   region = "ap-southeast-1"
-  # }
-
 }
 
 provider "aws" {
