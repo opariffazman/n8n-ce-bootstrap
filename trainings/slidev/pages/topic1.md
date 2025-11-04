@@ -10,32 +10,6 @@ layout: center
 </div>
 
 ---
-transition: fade-out
----
-
-# Welcome! <mdi-hand-wave />
-
-<div v-click class="mt-12 grid grid-cols-3 gap-8">
-  <div class="p-6 border border-main rounded">
-    <div class="text-5xl mb-4"><mdi-account-group /></div>
-    <div class="font-bold text-lg">Who We Are</div>
-    <div class="opacity-80 mt-2">School administrators learning automation</div>
-  </div>
-
-  <div class="p-6 border border-main rounded">
-    <div class="text-5xl mb-4"><mdi-target /></div>
-    <div class="font-bold text-lg">Our Goal</div>
-    <div class="opacity-80 mt-2">Build smart workflows for school tasks</div>
-  </div>
-
-  <div class="p-6 border border-main rounded">
-    <div class="text-5xl mb-4"><mdi-clock-outline /></div>
-    <div class="font-bold text-lg">Today</div>
-    <div class="opacity-80 mt-2">4 hours of hands-on learning</div>
-  </div>
-</div>
-
----
 transition: slide-up
 ---
 
@@ -47,7 +21,7 @@ Workflow automation platform - connect apps without coding
 
 <div v-click>
 
-```mermaid
+```mermaid {theme: 'dark', scale: 0.8}
 graph LR
     A[<mdi-email /> Email] --> B[N8N]
     C[<mdi-google /> Google Sheets] --> B
@@ -61,38 +35,6 @@ graph LR
 
 <div v-click class="mt-8 p-4 bg-blue-500/20 rounded">
 <mdi-lightbulb /> <strong>Think of it as:</strong> Digital workflows that run automatically, connecting your school's tools together
-</div>
-
----
-transition: slide-left
----
-
-# Why Automation for Schools? <mdi-school />
-
-<div class="mt-8 grid grid-cols-2 gap-8">
-  <div v-click class="p-4 bg-green-500/20 rounded">
-    <div class="text-3xl mb-3"><mdi-clock-fast /></div>
-    <div class="font-bold">Save Time</div>
-    <div class="opacity-80">Automate repetitive tasks</div>
-  </div>
-
-  <div v-click class="p-4 bg-blue-500/20 rounded">
-    <div class="text-3xl mb-3"><mdi-account-multiple /></div>
-    <div class="font-bold">Better Communication</div>
-    <div class="opacity-80">Respond faster to parents & staff</div>
-  </div>
-
-  <div v-click class="p-4 bg-purple-500/20 rounded">
-    <div class="text-3xl mb-3"><mdi-shield-check /></div>
-    <div class="font-bold">Reduce Errors</div>
-    <div class="opacity-80">Consistent, reliable processes</div>
-  </div>
-
-  <div v-click class="p-4 bg-orange-500/20 rounded">
-    <div class="text-3xl mb-3"><mdi-chart-line /></div>
-    <div class="font-bold">Focus on What Matters</div>
-    <div class="opacity-80">More time for students & teaching</div>
-  </div>
 </div>
 
 ---
@@ -185,7 +127,7 @@ Automatically categorize parent emails and route to right departments
 
 <div v-click>
 
-```mermaid
+```mermaid {theme: 'dark', scale: 0.95}
 graph LR
     A[<mdi-gesture-tap /> Manual Trigger] --> B[<mdi-database /> Set Node<br/>Create Email Data]
     B --> C[<mdi-call-split /> IF Node<br/>Check Keywords]
