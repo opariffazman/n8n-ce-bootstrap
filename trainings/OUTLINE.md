@@ -14,7 +14,7 @@
   - Canvas, Nodes panel, Executions
   - Quick demo: A working workflow
 
-#### **Break (5 min)**
+**Break (5 min)**
 
 #### Hands-on Lab 1: Your First Manual Workflow (30 min)
 
@@ -34,7 +34,7 @@
 - Connect your Google Workspace Account to N8N
 - N8N Credentials setup walkthrough
 
-#### **Break (5 min)**
+**Break (5 min)**
 
 #### Hands-on Lab 2: Read & Write with Google Sheets (25 min)
 
@@ -54,7 +54,7 @@
 - When to use AI vs traditional nodes
 - **School examples**: Auto-summarize parent emails, draft responses, extract key information
 
-#### **Break (5 min)**
+**Break (5 min)**
 
 #### Hands-on Lab 4: Your First AI Agent Workflow (30 min)
 
@@ -70,7 +70,7 @@
 
 #### Q&A (10 min)
 
-### **Hour 4: Complete Workflow (60 min)**
+### **Topic 4: Complete Workflow (60 min)**
 
 #### Hands-on Lab 5: Build Complete AI Workflow (30 min)
 
@@ -88,7 +88,7 @@
 - Gmail node (send confirmation)
 - Test with complete vs incomplete requests
 
-#### **Break (5 min)**
+**Break (5 min)**
 
 #### AI Agent Best Practices (15 min)
 
