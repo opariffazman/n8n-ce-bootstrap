@@ -46,6 +46,3 @@ layout: end
 
 # Thank You! <mdi-hand-wave />
 
-<div class="text-xl mt-8">
-Questions? Let's discuss!
-</div>
