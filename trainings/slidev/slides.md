@@ -1,5 +1,5 @@
 ---
-theme: seriph
+theme: apple-basic
 background: https://cover.sli.dev
 title: Introduction to N8N and Workflow Automation
 info: |
