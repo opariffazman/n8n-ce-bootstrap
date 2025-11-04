@@ -1,8 +1,8 @@
 # Slidev Presentation Creation Instructions
 
-  Create Slidev presentation slides following these requirements:
+  Create Slidev `slidev/slides.md` presentation slides following these requirements:
 
-  Follow sli.dev examples slide to understand the usage
+  Follow the default examples slide `slidev/examples.md` to understand the usage
 
 ## Input Structure
 
@@ -51,7 +51,7 @@
 ## File Organization
 
 - Main file: `slidev/slides.md` (imports pages)
-- Hour pages: `slidev/pages/hour1.md`, `slidev/pages/hour2.md`, etc.
+- Hour pages: `slidev/pages/topic1.md`, `slidev/pages/topic2.md`, etc.
 - Use `src: ./pages/hourX.md` to import sections
 
 ## Example Slide Pattern
